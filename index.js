@@ -12,8 +12,7 @@ app.get('/api', (req, res) => {
   const currentDay = daysOfWeek[new Date().getDay()];
 
   const now = new Date();
-  const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000)).toISOString();
-
+  const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000)).toISOString().replace(/\.\d+/, "");
   const githubFileUrl = `https://github.com/sticklo/profile-api/blob/main/index.js`;
   const githubRepoUrl = `https://github.com/sticklo/profile-api`;
 
